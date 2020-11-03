@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-              withCredentials([string(credentialsId: 'newtoken', variable: 'graphql')])  {
+              withCredentials([string(credentialsId: 'token', variable: 'mysecret')])  {
                   sh '''curl -H "Authorization: bearer $mysecret" -X POST -d " \\
  { \\
    \\"query\\": \\"query { viewer { login id name repositories(first: 10) { edges { node { id description name nameWithOwner } } } } }\\" \\
