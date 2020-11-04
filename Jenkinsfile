@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('release') {
             steps {
               withCredentials([string(credentialsId: 'token', variable: 'mysecret')])  {
                   sh '''curl -H "Authorization: bearer $mysecret" -X POST -d " \\
